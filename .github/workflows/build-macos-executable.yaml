@@ -3,7 +3,7 @@ name: Build macOS Executable
 on:
   push:
     branches:
-      - initial_commit # Replace with the name of your main branch if different
+      - initial_commit 
 
 jobs:
   build:
@@ -24,10 +24,10 @@ jobs:
         pip install pyinstaller
 
     - name: Build macOS executable
-      run: pyinstaller --onefile your_script.py # Replace with your script's name
+      run: pyinstaller --onefile image_call.py
 
     - name: Upload artifact
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-artifact@v3
       with:
         name: macos-executable
-        path: dist/your_script # Replace with your script's name without the .py extension
+        path: dist/image_call 
